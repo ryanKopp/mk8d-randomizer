@@ -7,7 +7,6 @@ use rand::seq::IteratorRandom;
 use std::ops;
 
 #[derive(Debug, Deserialize)]
-#[allow(dead_code)]
 struct Statstick {
     name: String,
     speed : f32,
@@ -77,12 +76,12 @@ fn read_csv(fname: &str) -> Result<Statstick, Box<dyn Error>> {
 }
 
 fn main() {
-    let driver = read_csv("csv/DRIVERS.csv").expect("failure");
-    let kart = read_csv("csv/VEHICLES.csv").expect("failure");
-    let tire = read_csv("csv/TIRES.csv").expect("failure");
-    let glider = read_csv("csv/GLIDERS.csv").expect("failure");
+    let driver = read_csv("csv/DRIVERS.csv").unwrap();
+    let kart = read_csv("csv/VEHICLES.csv").unwrap();
+    let tire = read_csv("csv/TIRES.csv").unwrap();
+    let glider = read_csv("csv/GLIDERS.csv").unwrap();
 
     let combo = driver + kart + tire + glider;
-    println!("{}", combo);
+    println!("{:?}", combo);
 
 }
