@@ -1,0 +1,16 @@
+name,speed,acceleration,weight,handling,traction
+Super Glider,0,0,0,0,0
+Cloud Glider,-0.25,0.25,-0.25,0,0
+Wario Wing,0,0,0.25,0,-0.25
+Waddle Wing,0,0,0,0,0
+Peach Parasol,-0.25,0.25,0,0,-0.25
+Parachute,-0.25,0.25,-0.25,0,0
+Parafoil,-0.25,0.25,0,0,-0.25
+Flower Glider,-0.25,0.25,-0.25,0,0
+Bowser Kite,-0.25,0.25,0,0,-0.25
+Plane Glider,0,0,0.25,0,-0.25
+MKTV Parafoil,-0.25,0.25,0,0,-0.25
+Gold Glider,0,0,0.25,0,-0.25
+Hylian Kite,0,0,0,0,0
+Paper Glider,-0.25,0.25,-0.25,0,0
+Paraglider,0,0,0.25,0,-0.25

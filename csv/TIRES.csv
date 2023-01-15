@@ -1,0 +1,23 @@
+name,speed,acceleration,weight,handling,traction
+Standard,0,0,0,0,0
+Monster,0,-0.5,0.5,-0.75,0.5
+Roller,-0.5,0.5,-0.5,0.25,-0.25
+Slim,0.25,-0.5,0,0.25,-1
+Slick,0.5,-0.75,0.25,-0.25,-1.25
+Metal,0.5,-1,0.5,-0.25,-0.75
+Button,-0.25,0.25,-0.5,0,-0.5
+Off-Road,0.25,-0.25,0.25,-0.5,0.25
+Sponge,-0.25,0,-0.25,-0.25,0.25
+Wood,0.25,-0.5,0,0.25,-1
+Cushion,-0.25,0,-0.25,-0.25,0.25
+Blue Standard,0,0,0,0,0
+Hot Monster,0,-0.5,0.5,-0.75,0.5
+Azure Roller,-0.5,0.5,-0.5,0.25,-0.25
+Crimson Slim,0.25,-0.5,0,0.25,-1
+Cyber Slick,0.5,-0.75,0.25,-0.25,-1.25
+Retro Off-Road,0.25,-0.25,0.25,-0.5,0.25
+Gold Tires,0.5,-1,0.5,-0.25,-0.75
+GLA Tires,0,0,0,0,0
+Triforce Tires,0.25,-0.25,0.25,-0.5,0.25
+Leaf Tires,-0.25,0.25,-0.5,0,-0.5
+Ancient Tires,0,-0.5,0.5,-0.75,0.5
