@@ -63,7 +63,7 @@ fn generate_bar(num: f32) -> String {
 }
 
 
-fn read_csv(fname: &str) -> Result<Statstick, Box<dyn Error>> {
+fn pick_item_from_csv(fname: &str) -> Result<Statstick, Box<dyn Error>> {
 
     let file = File::open(fname)?;
     let mut rdr = csv::Reader::from_reader(file);
@@ -76,12 +76,16 @@ fn read_csv(fname: &str) -> Result<Statstick, Box<dyn Error>> {
 }
 
 fn main() {
-    let driver = read_csv("csv/DRIVERS.csv").unwrap();
-    let kart = read_csv("csv/VEHICLES.csv").unwrap();
-    let tire = read_csv("csv/TIRES.csv").unwrap();
-    let glider = read_csv("csv/GLIDERS.csv").unwrap();
+    let driver = pick_item_from_csv("csv/DRIVERS.csv")
+        .expect("error getting driver");
+    let kart = pick_item_from_csv("csv/VEHICLES.csv")
+        .expect("error getting kart");
+    let tire = pick_item_from_csv("csv/TIRES.csv")
+        .expect("error getting tire");
+    let glider = pick_item_from_csv("csv/GLIDERS.csv")
+        .expect("error getting glider");
 
     let combo = driver + kart + tire + glider;
-    println!("{:?}", combo);
+    println!("{}", combo);
 
 }
