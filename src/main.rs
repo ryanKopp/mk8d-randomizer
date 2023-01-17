@@ -1,7 +1,9 @@
+mod data;
+
 use core::fmt;
 use std::error::Error;
 //use std::process;
-use std::fs::File;
+//use std::fs::File;
 use serde::Deserialize;
 use rand::seq::IteratorRandom;
 use std::ops;
@@ -63,10 +65,9 @@ fn generate_bar(num: f32) -> String {
 }
 
 
-fn pick_item_from_csv(fname: &str) -> Result<Statstick, Box<dyn Error>> {
+fn pick_item_from_csv(csv: &str) -> Result<Statstick, Box<dyn Error>> {
 
-    let file = File::open(fname)?;
-    let mut rdr = csv::Reader::from_reader(file);
+    let mut rdr = csv::Reader::from_reader(csv.as_bytes());
 
     // Pick a random record to deserialize into struct
     let record: Statstick = rdr.deserialize()
@@ -76,16 +77,16 @@ fn pick_item_from_csv(fname: &str) -> Result<Statstick, Box<dyn Error>> {
 }
 
 fn main() {
-    let driver = pick_item_from_csv("csv/DRIVERS.csv")
+    let driver = pick_item_from_csv(data::DRIVER_DATA)
         .expect("error getting driver");
-    let kart = pick_item_from_csv("csv/VEHICLES.csv")
+    let vehicle = pick_item_from_csv(data::VEHICLE_DATA)
         .expect("error getting kart");
-    let tire = pick_item_from_csv("csv/TIRES.csv")
+    let tire = pick_item_from_csv(data::TIRE_DATA)
         .expect("error getting tire");
-    let glider = pick_item_from_csv("csv/GLIDERS.csv")
+    let glider = pick_item_from_csv(data::GLIDER_DATA)
         .expect("error getting glider");
 
-    let combo = driver + kart + tire + glider;
+    let combo = driver + vehicle + tire + glider;
     println!("{}", combo);
 
 }
