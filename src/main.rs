@@ -1,14 +1,11 @@
 mod data;
 
 use core::fmt;
-use std::error::Error;
-//use std::process;
-//use std::fs::File;
 use serde::Deserialize;
 use rand::seq::IteratorRandom;
 use std::ops;
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 struct Statstick {
     name: String,
     speed : f32,
@@ -18,17 +15,34 @@ struct Statstick {
     handling: f32,
 }
 
+impl Statstick{
+    fn new() -> Statstick {
+        return Statstick{
+            name: "".to_string(),
+            speed: 0.0,
+            acceleration: 0.0,
+            weight: 0.0,
+            traction: 0.0,
+            handling: 0.0,
+        };
+    }
+}
+
 impl ops::Add<Statstick> for Statstick {
     type Output = Statstick;
 
     fn add(mut self, _rhs: Statstick) -> Statstick {
-        self.name = format!("{}, {}", self.name, _rhs.name); 
+        if self.name != "" {
+            self.name = format!("{}, {}", self.name, _rhs.name); 
+        }else{
+            self.name = _rhs.name;
+        }
         self.speed += _rhs.speed;
         self.acceleration += _rhs.acceleration;
         self.weight += _rhs.weight;
         self.traction += _rhs.traction;
         self.handling += _rhs.handling;
-        
+
         self
     }
 }
@@ -65,28 +79,36 @@ fn generate_bar(num: f32) -> String {
 }
 
 
-fn pick_item_from_csv(csv: &str) -> Result<Statstick, Box<dyn Error>> {
+fn pick_item_from_csv(csv: &str) -> Statstick {
 
     let mut rdr = csv::Reader::from_reader(csv.as_bytes());
 
     // Pick a random record to deserialize into struct
+    // data is hardcorded so unwrap is ok
     let record: Statstick = rdr.deserialize()
-        .choose(&mut rand::thread_rng())
-        .unwrap().unwrap();
-    Ok(record)
+        .choose(&mut rand::thread_rng()).unwrap().unwrap();
+
+    return record;
+}
+
+fn get_combo_from_csv() -> Statstick {
+    let assets = vec![data::DRIVER_DATA,
+    data::VEHICLE_DATA,
+    data::TIRE_DATA,
+    data::GLIDER_DATA];
+
+    let mut combo = Statstick::new();
+
+    for part_list in assets{
+        combo = combo + pick_item_from_csv(part_list);
+    }
+
+    return combo;
 }
 
 fn main() {
-    let driver = pick_item_from_csv(data::DRIVER_DATA)
-        .expect("error getting driver");
-    let vehicle = pick_item_from_csv(data::VEHICLE_DATA)
-        .expect("error getting kart");
-    let tire = pick_item_from_csv(data::TIRE_DATA)
-        .expect("error getting tire");
-    let glider = pick_item_from_csv(data::GLIDER_DATA)
-        .expect("error getting glider");
 
-    let combo = driver + vehicle + tire + glider;
+    let combo = get_combo_from_csv();
     println!("{}", combo);
 
 }
