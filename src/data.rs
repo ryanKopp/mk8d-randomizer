@@ -128,3 +128,78 @@ Gold Glider,0,0,0.25,0,-0.25
 Hylian Kite,0,0,0,0,0
 Paper Glider,-0.25,0.25,-0.25,0,0
 Paraglider,0,0,0.25,0,-0.25";
+
+pub const MAPS: &str = "
+name
+Mario Kart Stadium
+Water Park
+Sweet Sweet Canyon
+Thwomp Ruins
+Mario Circuit (MK8)
+Toad Harbor
+Twisted Mansion
+Shy Guy Falls
+Sunshine Airport
+Dolphin Shoals
+Electrodome
+Mount Wario
+Cloudtop Cruise
+Bone-Dry Dunes
+Bowser's Castle
+Rainbow Road (MK8)
+Yoshi Circuit
+Excitebike Arena
+Dragon Driftway
+Mute City
+Baby Park
+Cheese Land
+Wild Woods
+Animal Crossing
+Moo Moo Meadows
+Mario Circuit (GBA)
+Cheep Cheep Beach
+Toad's Turnpike
+Dry Dry Desert
+Donut Plains 3
+Royal Raceway
+DK Jungle
+Wario Stadium
+Sherbet Land
+Music Park
+Yoshi Valley
+Tick-Tock Clock
+Piranha Plant Slide
+Grumble Volcano
+Rainbow Road (N64)
+Wario's Gold Mine
+Rainbow Road (SNES)
+Ice Ice Outpost
+Hyrule Circuit
+Neo Bowser City
+Ribbon Road
+Super Bell Subway
+Big Blue
+Paris Promenade
+Toad Circuit
+Choco Mountain
+Coconut Mall
+Tokyo Blur
+Shroom Ridge
+Sky Garden
+Ninja Hideaway
+New York Minute
+Mario Circuit 3 (SNES)
+Kalimari Desert
+Waluigi Pinball
+Sydney Sprint
+Snow Land
+Mushroom Gorge
+Sky-High Sundae
+London Loop
+Boo Lake
+Rock Rock Mountain
+Maple Treeway
+Berlin Byways
+Peach Gardens
+Merry Mountain
+Rainbow Road (3DS)";

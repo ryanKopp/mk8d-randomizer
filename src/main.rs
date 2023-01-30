@@ -2,17 +2,19 @@ mod data;
 
 use core::fmt;
 use serde::Deserialize;
-use rand::seq::IteratorRandom;
+use rand::seq::{IteratorRandom, SliceRandom};
 use std::ops;
+use std::{process, env};
+//use rand::Rng;
 
-#[derive(Debug, Deserialize, Serialize)]
+#[derive(Debug, Deserialize)]
 struct Statstick {
     name: String,
     speed : f32,
     acceleration: f32,
     weight : f32,
-    traction: f32, 
     handling: f32,
+    traction: f32, 
 }
 
 impl Statstick{
@@ -22,8 +24,8 @@ impl Statstick{
             speed: 0.0,
             acceleration: 0.0,
             weight: 0.0,
-            traction: 0.0,
             handling: 0.0,
+            traction: 0.0,
         };
     }
 }
@@ -40,8 +42,8 @@ impl ops::Add<Statstick> for Statstick {
         self.speed += _rhs.speed;
         self.acceleration += _rhs.acceleration;
         self.weight += _rhs.weight;
-        self.traction += _rhs.traction;
         self.handling += _rhs.handling;
+        self.traction += _rhs.traction;
 
         self
     }
@@ -53,8 +55,8 @@ impl fmt::Display for Statstick {
         write!(f, "Speed: {}\n{}\n", self.speed, generate_bar(self.speed))?;
         write!(f, "Acceleration: {}\n{}\n", self.acceleration, generate_bar(self.acceleration))?;
         write!(f, "Weight: {}\n{}\n", self.weight, generate_bar(self.weight))?;
-        write!(f, "Traction: {}\n{}\n", self.traction, generate_bar(self.traction))?;
-        write!(f, "Handling: {}\n{}\n", self.handling, generate_bar(self.handling))
+        write!(f, "Handling: {}\n{}\n", self.handling, generate_bar(self.handling))?;
+        write!(f, "Traction: {}\n{}\n", self.traction, generate_bar(self.traction))
     }
 }
 
@@ -77,7 +79,6 @@ fn generate_bar(num: f32) -> String {
 
     bar
 }
-
 
 fn pick_item_from_csv(csv: &str) -> Statstick {
 
@@ -106,9 +107,41 @@ fn get_combo_from_csv() -> Statstick {
     return combo;
 }
 
+fn get_map_list() -> Vec<String> { 
+    let mut rdr = csv::Reader::from_reader(data::MAPS.as_bytes());
+    let mut maps = Vec::new();
+
+    for record in rdr.records(){
+        let result = record.unwrap();
+        maps.push(result.as_slice().to_string());
+    }
+    return maps;
+}
+
+fn get_random_map_order(maps: &mut Vec<String>) {
+    
+    let mut rng = rand::thread_rng();
+    maps.shuffle(&mut rng);
+}
+
+
 fn main() {
 
     let combo = get_combo_from_csv();
     println!("{}", combo);
+    let mut maps = get_map_list();
+    get_random_map_order(&mut maps);
+   
+    let mut args = env::args();
+    args.next();
+    
+    let num_maps = match args.next(){
+        Some(num) => num.parse::<i32>().unwrap(),
+        None => {println!("Outputting zero maps"); 0},
+    };
+
+    for map in maps.into_iter().take(num_maps.try_into().unwrap()){
+        println!("{}", map);
+    }
 
 }
