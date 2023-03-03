@@ -4,7 +4,7 @@ This project came about because there is no random loadout generation built into
 MK8D, and me and my friends too often play with the exact same setups. It's also 
 a good excuse to learn new things. 
 
-You can use the app in the browser [here](ryankopp.github.io/mk8d-randomizer)
+You can use the app in the browser [here](https://ryankopp.github.io/mk8d-randomizer/)
 
 Or you can build and run it natively with `cargo run`
 
