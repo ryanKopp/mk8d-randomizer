@@ -70,13 +70,13 @@ impl Default for MyApp {
 impl eframe::App for MyApp{
   fn update(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
     egui::CentralPanel::default().show(ctx, |ui| {
-      ui.heading(RichText::new("Mario Kart 8 Deluxe Randomizer").font(FontId::proportional(36.0)));
-      egui::ScrollArea::vertical().show(ui, |ui|{
+      egui::ScrollArea::new([true,true]).show(ui, |ui|{
+          ui.heading(RichText::new("Mario Kart 8 Deluxe Randomizer").font(FontId::proportional(36.0)));
         ui.horizontal(|ui| {
           ui.vertical(|ui| {
             egui::Grid::new("combo grid")
               .num_columns(3)
-              .min_col_width(300.0)
+              .min_col_width(260.0)
               .show(ui, |ui| {
                 ui.vertical(|ui|{
                   ui.label(RichText::new("Player 1 Combo").font(FontId::proportional(18.0)));
@@ -108,20 +108,25 @@ impl eframe::App for MyApp{
               self.combo3 = format!("\n{}", items::get_combo_from_csv());
               self.combo4 = format!("\n{}", items::get_combo_from_csv());
             }
+            ui.add_space(200.0);
           });
           ui.separator();
 
           ui.vertical(|ui| {
-            ui.heading(RichText::new("Map Randomizer").font(FontId::proportional(25.0)));
+            ui.add(egui::Label::new(
+                RichText::new("Map Randomizer")
+                .font(FontId::proportional(25.0)))
+              .wrap(false));
             ui.horizontal(|ui| {
               ui.label(RichText::new("Number of Maps").font(FontId::proportional(18.0)));
               ui.add(egui::Slider::new(&mut self.num_maps, 4..=48));
-              if ui.button("Randomize Maps").clicked() {
-                self.map_list = maps::get_maps(self.num_maps);
-              }
             });
+            if ui.button("Randomize Maps").clicked() {
+              self.map_list = maps::get_maps(self.num_maps);
+            }
             ui.separator();
             ui.label(RichText::new(format!("{}", self.map_list)).font(FontId::proportional(14.0)));
+            ui.add_space(200.0);
           });
         });
       });
