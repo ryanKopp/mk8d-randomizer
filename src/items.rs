@@ -33,7 +33,7 @@ impl ops::Add<Statstick> for Statstick {
 
     fn add(mut self, _rhs: Statstick) -> Statstick {
         if self.name != "" {
-            self.name = format!("{}, {}", self.name, _rhs.name); 
+            self.name = format!("{}\n{}", self.name, _rhs.name); 
         }else{
             self.name = _rhs.name;
         }
@@ -49,7 +49,7 @@ impl ops::Add<Statstick> for Statstick {
 
 impl fmt::Display for Statstick {
     fn fmt(&self, f:&mut fmt::Formatter) -> fmt::Result {
-        write!(f, "{}\n", self.name)?;
+        write!(f, "{}\n\n", self.name)?;
         write!(f, "Speed: {}\n{}\n", self.speed, generate_bar(self.speed))?;
         write!(f, "Acceleration: {}\n{}\n", self.acceleration, generate_bar(self.acceleration))?;
         write!(f, "Weight: {}\n{}\n", self.weight, generate_bar(self.weight))?;
