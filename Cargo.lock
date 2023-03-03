@@ -1246,6 +1246,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "marioKartRandomizer"
+version = "0.1.0"
+dependencies = [
+ "console_error_panic_hook",
+ "csv",
+ "eframe",
+ "getrandom",
+ "rand",
+ "serde",
+ "tracing-subscriber",
+ "tracing-wasm",
+ "wasm-bindgen-futures",
+]
+
+[[package]]
 name = "memchr"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1294,21 +1309,6 @@ dependencies = [
  "log",
  "wasi",
  "windows-sys 0.45.0",
-]
-
-[[package]]
-name = "mk_rustomizer"
-version = "0.1.0"
-dependencies = [
- "console_error_panic_hook",
- "csv",
- "eframe",
- "getrandom",
- "rand",
- "serde",
- "tracing-subscriber",
- "tracing-wasm",
- "wasm-bindgen-futures",
 ]
 
 [[package]]
