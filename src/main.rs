@@ -108,7 +108,7 @@ impl eframe::App for MyApp{
               self.combo3 = format!("\n{}", items::get_combo_from_csv());
               self.combo4 = format!("\n{}", items::get_combo_from_csv());
             }
-            ui.add_space(200.0);
+            ui.add_space(10.0);
           });
           ui.separator();
 
@@ -126,7 +126,6 @@ impl eframe::App for MyApp{
             }
             ui.separator();
             ui.label(RichText::new(format!("{}", self.map_list)).font(FontId::proportional(14.0)));
-            ui.add_space(200.0);
           });
         });
       });
