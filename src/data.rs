@@ -1,39 +1,40 @@
 pub const DRIVER_DATA: &str = "
 name,speed,acceleration,weight,handling,traction
-Character: Baby Peach,2.25,4,2,5,4.25
-Character: Baby Daisy,2.25,4,2,5,4.25
-Character: Baby Rosalina,2.25,4.25,2,4.75,3.75
-Character: Lemmy,2.25,4.25,2,4.75,3.75
-Character: Baby Mario,2.5,4.25,2.25,4.5,4
-Character: Baby Luigi,2.5,4.25,2.25,4.5,4
-Character: Dry Bones,2.5,4.25,2.25,4.5,4
-Character: Koopa Troopa,2.75,4,2.5,4.5,4.25
-Character: Lakitu,2.75,4,2.5,4.5,4.25
-Character: Bowser Jr.,2.75,4,2.5,4.5,4.25
-Character: Toadette,2.75,4.25,2.5,4.25,3.5
-Character: Wendy,2.75,4.25,2.5,4.25,3.5
-Character: Isabelle,2.75,4.25,2.5,4.25,3.5
-Character: Toad,3,4,2.75,4.25,4
-Character: Shy Guy,3,4,2.75,4.25,4
-Character: Larry,3,4,2.75,4.25,4
-Character: Cat Peach,3.25,4,2.75,4,3.75
-Character: Inkling (F),3.25,4,2.75,4,3.75
-Character: Villager (F),3.25,4,2.75,4,3.75
-Character: Peach,3.5,3.75,3,3.75,3.75
-Character: Daisy,3.5,3.75,3,3.75,3.75
-Character: Yoshi,3.5,3.75,3,3.75,3.75
-Character: Tanooki Mario,3.5,3.75,3.25,3.75,3.25
-Character: Inkling (M),3.5,3.75,3.25,3.75,3.25
-Character: Villager (M),3.5,3.75,3.25,3.75,3.25
-Character: Luigi,3.75,3.5,3.5,3.75,3.25
-Character: Iggy,3.75,3.5,3.5,3.75,3.25
-Character: Mario,3.75,3.5,3.5,3.5,3.5
-Character: Ludwig,3.75,3.5,3.5,3.5,3.5
+Character: Baby Peach,2.5,4,2,5,4.25
+Character: Baby Daisy,2.5,4,2,5,4.25
+Character: Baby Rosalina,2.5,4.25,2,4.75,3.75
+Character: Lemmy,2.5,4.25,2,4.75,3.75
+Character: Baby Mario,2.75,4.25,2.25,4.5,4
+Character: Baby Luigi,2.75,4.25,2.25,4.5,4
+Character: Dry Bones,2.75,4.25,2.25,4.5,4
+Character: Koopa Troopa,3,4,2.5,4.5,4.25
+Character: Lakitu,3,4,2.5,4.5,4.25
+Character: Bowser Jr.,3,4,2.5,4.5,4.25
+Character: Toadette,3,4.25,2.5,4.25,3.5
+Character: Wendy,3,4.25,2.5,4.25,3.5
+Character: Isabelle,3,4.25,2.5,4.25,3.5
+Character: Toad,3.25,4,2.75,4.25,4
+Character: Shy Guy,3.25,4,2.75,4.25,4
+Character: Larry,3.25,4,2.75,4.25,4
+Character: Cat Peach,3.5,4,2.75,4,3.75
+Character: Inkling (F),3.5,4,2.75,4,3.75
+Character: Villager (F),3.5,4,2.75,4,3.75
+Character: Peach,3.75,3.75,3,3.75,3.75
+Character: Daisy,3.75,3.75,3,3.75,3.75
+Character: Yoshi,3.75,3.75,3,3.75,3.75
+Character: Birdo,3.75,3.75,3,3.75,3.75
+Character: Tanooki Mario,3.75,3.75,3.25,3.75,3.25
+Character: Inkling (M),3.75,3.75,3.25,3.75,3.25
+Character: Villager (M),3.75,3.75,3.25,3.75,3.25
+Character: Mario,4,3.5,3.5,3.5,3.5
+Character: Ludwig,4,3.5,3.5,3.5,3.5
+Character: Luigi,4,3.5,3.5,3.75,3.25
+Character: Iggy,4,3.5,3.5,3.75,3.25
+Character: Rosalina,4.25,3.25,3.75,3.25,3.75
+Character: King Boo,4.25,3.25,3.75,3.25,3.75
+Character: Link,4.25,3.25,3.75,3.25,3.75
 Character: Metal Mario,4.25,3.25,4.5,3.25,3.25
 Character: Pink Gold Peach,4.25,3.25,4.5,3.25,3.25
-Character: Rosalina,4,3.25,3.75,3.25,3.75
-Character: King Boo,4,3.25,3.75,3.25,3.75
-Character: Link,4,3.25,3.75,3.25,3.75
 Character: Donkey Kong,4.5,3.25,4,3,3
 Character: Waluigi,4.5,3.25,4,3,3
 Character: Roy,4.5,3.25,4,3,3
@@ -202,4 +203,12 @@ Maple Treeway
 Berlin Byways
 Peach Gardens
 Merry Mountain
-Rainbow Road (3DS)";
+Rainbow Road (3DS)
+Amsterdam Drift
+Riverside Park
+DK Summit
+Yoshi's Island
+Bangkok Rush
+Mario Circuit (DS)
+Waluigi Stadium
+Singapore Speedway";
