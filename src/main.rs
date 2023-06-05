@@ -14,18 +14,6 @@ fn main() {
 // create a component that renders a div with the text "Hello, world!"
 fn App(cx: Scope) -> Element {
     cx.render(rsx! {
-        div { class: "flex flex-wrap -mx-4 mb-14 items-center",
-        div { class: "w-full xl:w-2/3 px-4 mb-4 xl:mb-0",
-        p {
-            "hello there"
-        }
-        }
-        p { "hello from outside" }
-        p { "hello from outside" }
-        p { "hello from outside" }
-        p { "hello from outside" }
-        p { "hello from outside" }
-        p { "hello from outside" }
-        } 
+        p { "hello world" }
     })
 }
