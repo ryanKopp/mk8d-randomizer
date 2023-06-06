@@ -14,6 +14,8 @@ fn main() {
 // create a component that renders a div with the text "Hello, world!"
 fn App(cx: Scope) -> Element {
     cx.render(rsx! {
-        p { "hello world" }
+        div{
+            "hello world" 
+        }
     })
 }
