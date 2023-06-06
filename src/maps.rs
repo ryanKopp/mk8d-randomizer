@@ -19,6 +19,7 @@ fn shuffle_maps(maps: &mut Vec<String>) {
     maps.shuffle(&mut rng);
 }
 
+#[allow(dead_code)]
 pub fn take_maps(map_num: u32) -> String {
     get_map_list()
         .iter()

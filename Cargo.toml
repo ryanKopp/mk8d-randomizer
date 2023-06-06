@@ -1,5 +1,5 @@
 [package]
-name = "marioKartRandomizer"
+name = "mk8d_randomizer"
 version = "0.1.0"
 edition = "2021"
 license = "GPL-2.0-only"
