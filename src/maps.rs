@@ -1,6 +1,7 @@
 use crate::data;
 use rand::seq::SliceRandom;
 
+#[allow(dead_code)]
 pub fn get_map_list() -> Vec<String> {
     let mut rdr = csv::Reader::from_reader(data::MAPS.as_bytes());
     let mut maps = Vec::new();
@@ -19,6 +20,7 @@ fn shuffle_maps(maps: &mut Vec<String>) {
     maps.shuffle(&mut rng);
 }
 
+#[allow(dead_code)]
 pub fn take_maps(map_num: u32) -> String {
     get_map_list()
         .iter()
