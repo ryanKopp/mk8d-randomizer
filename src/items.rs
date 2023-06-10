@@ -26,6 +26,17 @@ impl Statstick {
             traction: 0.0,
         };
     }
+    #[allow(dead_code)]
+    pub fn test_item() -> Statstick {
+        return Statstick {
+            name: "test".to_string(),
+            speed: 6.0,
+            acceleration: 6.0,
+            weight: 6.0,
+            handling: 6.0,
+            traction: 6.0,
+        };
+    }
 }
 
 impl ops::Add<Statstick> for Statstick {
@@ -79,7 +90,7 @@ impl fmt::Display for Statstick {
 }
 
 fn generate_bar(num: f32) -> String {
-    let bar_width = 29;
+    let bar_width = 30;
     let num_pounds: u8 = (num * 4.0) as u8;
     let mut bar = String::from("[");
 
