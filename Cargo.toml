@@ -10,15 +10,9 @@ license = "GPL-2.0-only"
 csv = "1.1"
 rand = "0.8.4"
 serde = { version = "1.0", features = ["derive"] }
-eframe = { version = "0.21.3", default-features = false, features = [
-    "accesskit",     # Make egui comptaible with screen readers. NOTE: adds a lot of dependencies.
-    "default_fonts", # Embed the default egui fonts.
-    "glow",          # Use the glow rendering backend. Alternative: "wgpu".
-    "persistence",   # Enable restoring app state when restarting the app.
-#    "dark-light",
-] }
+dioxus = "0.3.2"
+dioxus-web = "0.3.1"
 getrandom = { version = "0.2", features = ["js"] }
-
 
 # native:
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]

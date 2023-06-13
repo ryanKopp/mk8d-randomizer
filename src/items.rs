@@ -5,7 +5,7 @@ use rand::seq::IteratorRandom;
 use serde::Deserialize;
 use std::ops;
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, PartialEq, Clone)]
 pub struct Statstick {
     name: String,
     speed: f32,
@@ -24,6 +24,17 @@ impl Statstick {
             weight: 0.0,
             handling: 0.0,
             traction: 0.0,
+        };
+    }
+    #[allow(dead_code)]
+    pub fn test_item() -> Statstick {
+        return Statstick {
+            name: "test".to_string(),
+            speed: 6.0,
+            acceleration: 6.0,
+            weight: 6.0,
+            handling: 6.0,
+            traction: 6.0,
         };
     }
 }
@@ -79,7 +90,7 @@ impl fmt::Display for Statstick {
 }
 
 fn generate_bar(num: f32) -> String {
-    let bar_width = 29;
+    let bar_width = 30;
     let num_pounds: u8 = (num * 4.0) as u8;
     let mut bar = String::from("[");
 
