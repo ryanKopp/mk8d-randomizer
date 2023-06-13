@@ -16,7 +16,7 @@ asset_dir = "public"
 [web.app]
 
 # HTML title tag content
-title = "MK8D Randomizer"
+title = "MK8D🏎️Randomizer"
 
 [web.watcher]
 

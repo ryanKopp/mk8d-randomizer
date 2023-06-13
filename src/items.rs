@@ -5,7 +5,7 @@ use rand::seq::IteratorRandom;
 use serde::Deserialize;
 use std::ops;
 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, PartialEq, Clone)]
 pub struct Statstick {
     name: String,
     speed: f32,
