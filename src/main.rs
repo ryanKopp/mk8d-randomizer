@@ -32,7 +32,7 @@ fn App(cx: Scope) -> Element {
             }
             div { class: "flex justify-around",
             button {
-                class: "p-2 m-2 rounded-lg bg-neutral-800 text-neutral-100 border border-solid border-neutral-300",
+                class: "p-2 m-2 rounded-lg bg-neutral-800 text-neutral-100 border border-solid border-neutral-300 touch-manipulation",
                 onclick: move |_| { 
                     combo_hook.set(items::get_combo_from_csv()) },
                     "New Loadout"
@@ -73,7 +73,7 @@ fn Map(cx: Scope) -> Element {
         }
         div { class: "flex flex-row justify-around",
             button {
-                class: "p-2 mt-3 rounded-lg bg-neutral-800 text-neutral-100 border border-solid border-neutral-300",
+                class: "p-2 mt-3 rounded-lg bg-neutral-800 text-neutral-100 border border-solid border-neutral-300 touch-manipulation",
                 onclick: move |_| {
                     changeCount(count+1);
                     log::info!("Click #{}", count);
@@ -90,7 +90,7 @@ fn Combo<'a>(cx: Scope<'a>, combo: &'a Statstick) -> Element<'a> {
     cx.render(rsx! {
         combo_string.lines().map(|i| rsx! {
             div {
-            class: "font-mono text-neutral-100 text-base/5 whitespace-pre",
+            class: "font-mono text-neutral-100 text-base/5 md:text-base/6 whitespace-pre",
                 "{i}" 
             } 
         }) 
