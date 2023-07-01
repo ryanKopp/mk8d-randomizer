@@ -7,7 +7,7 @@ use std::ops;
 
 #[derive(Debug, Deserialize, PartialEq, Clone)]
 pub struct Statstick {
-    name: String,
+    pub name: String,
     speed: f32,
     acceleration: f32,
     weight: f32,
