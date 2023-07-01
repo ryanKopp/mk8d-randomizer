@@ -1,2 +1,7 @@
 /target
 /dist
+/assets
+
+# local tailwind binary/script
+tailwindcss
+cssWatch
