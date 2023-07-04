@@ -15,7 +15,7 @@ pub fn get_map_list() -> Vec<String> {
     return maps;
 }
 
-fn shuffle_maps(maps: &mut Vec<String>) {
+pub fn shuffle_maps(maps: &mut Vec<String>) {
     let mut rng = rand::thread_rng();
     maps.shuffle(&mut rng);
 }

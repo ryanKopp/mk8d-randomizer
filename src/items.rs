@@ -7,12 +7,12 @@ use std::ops;
 
 #[derive(Debug, Deserialize, PartialEq, Clone)]
 pub struct Statstick {
-    pub name: String,
-    speed: f32,
-    acceleration: f32,
-    weight: f32,
-    handling: f32,
-    traction: f32,
+    name: String,
+    pub speed: f32,
+    pub acceleration: f32,
+    pub weight: f32,
+    pub handling: f32,
+    pub traction: f32,
 }
 
 impl Statstick {
@@ -26,16 +26,17 @@ impl Statstick {
             traction: 0.0,
         };
     }
-    #[allow(dead_code)]
-    pub fn test_item() -> Statstick {
-        return Statstick {
-            name: "test".to_string(),
-            speed: 6.0,
-            acceleration: 6.0,
-            weight: 6.0,
-            handling: 6.0,
-            traction: 6.0,
-        };
+    pub fn get_character(&self) -> Option<&str> {
+        self.name.lines().nth(0).clone()
+    }
+    pub fn get_kart(&self) -> Option<&str> {
+        self.name.lines().nth(1).clone()
+    }
+    pub fn get_tire(&self) -> Option<&str> {
+        self.name.lines().nth(2).clone()
+    }
+    pub fn get_glider(&self) -> Option<&str> {
+        self.name.lines().nth(3).clone()
     }
 }
 
