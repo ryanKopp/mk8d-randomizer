@@ -61,7 +61,7 @@ fn Map(cx: Scope) -> Element {
 
     cx.render(rsx! {
         div { class: "flex flex-row justify-around pt-2", 
-            img { src: "maps/{curr_map}.webp" }
+            img { src: "assets/maps/{curr_map}.webp" }
         }
         div { class: "text-neutral-100 text-lg text-center",
                 "{curr_map}"
@@ -94,19 +94,19 @@ fn Combo<'a>(cx: Scope<'a>, combo: &'a Statstick) -> Element<'a> {
         div { class: "flex flex-row justify-center text-neutral-100 pb-3",
         div { class: "flex flex-col pr-2",     
             img {
-                src: "characters/{char_name}.webp",
+                src: "assets/characters/{char_name}.webp",
             }
             div { class: "text-center text-neutral-100 text-lg", "{char_name}" }
         }
-            Stat_Bar { combo: combo.clone() } 
+            Stats_Display { combo: combo.clone() } 
         }
 
         div { 
         }
         div { class: "flex flex-row justify-center flex-grow-0 gap-4",
-            img { src: "karts/{kart_name}.webp" },
-            img { src: "tires/{tire_name}.webp" },
-            img { src: "gliders/{glider_name}.webp" },
+            img { src: "assets/karts/{kart_name}.webp" },
+            img { src: "assets/tires/{tire_name}.webp" },
+            img { src: "assets/gliders/{glider_name}.webp" },
         }
         div { class: "flex flex-row justify-center flex-grow-0 gap-4 min-h-[40px]",
             div { class: "min-w-[100px] max-w-[100px] text-neutral-100 text-center whitespace-normal text-base/5",
@@ -124,19 +124,19 @@ fn Combo<'a>(cx: Scope<'a>, combo: &'a Statstick) -> Element<'a> {
 }
 
 #[inline_props]
-fn Stat_Bar<'a>(cx: Scope<'a>, combo: &'a Statstick ) -> Element<'a> {
+fn Stats_Display<'a>(cx: Scope<'a>, combo: &'a Statstick ) -> Element<'a> {
     cx.render(rsx!{
         div { class: "flex flex-col text-sm",
             "Speed"
-                img { src: "statBars/{combo.speed}.png" }
+                img { src: "assets/statBars/{combo.speed}.png" }
             "Acceleration"
-                img { src: "statBars/{combo.acceleration}.png" }
+                img { src: "assets/statBars/{combo.acceleration}.png" }
             "Weight"
-                img { src: "statBars/{combo.weight}.png" }
+                img { src: "assets/statBars/{combo.weight}.png" }
             "Handling"
-                img { src: "statBars/{combo.handling}.png" }
+                img { src: "assets/statBars/{combo.handling}.png" }
             "Traction"
-                img { src: "statBars/{combo.traction}.png" }
+                img { src: "assets/statBars/{combo.traction}.png" }
         }
     })
 }
