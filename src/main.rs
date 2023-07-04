@@ -13,6 +13,7 @@ static MAPS: AtomRef<Vec<String>> = |_| maps::get_map_list();
 
 fn main() {
     // launch the web app
+    #[cfg(debug_assertions)]
     wasm_logger::init(wasm_logger::Config::default());
     dioxus_web::launch(App);
 }
@@ -26,7 +27,11 @@ fn App(cx: Scope) -> Element {
     cx.render(rsx! {
         section { class: "min-h-full m-5 bg-[#121212]",
             h1 { class: "text-neutral-100 lg:text-5xl text-4xl text-center", "Mario Kart 8 Deluxe Randomizer" }
-            div { class: "flex flex-col justify-center grow-0 pt-5", Combo { combo: combo_hook } }
+            div { class: "flex flex-row justify-center", 
+                div { class: "flex flex-col justify-center grow-0 pt-5", 
+                    Combo { combo: combo_hook }
+                }
+            }
             div { class: "flex justify-around",
             button {
                 class: "p-2 m-2 rounded-lg bg-neutral-800 text-neutral-100 border border-solid border-neutral-300 touch-manipulation",
@@ -36,8 +41,8 @@ fn App(cx: Scope) -> Element {
             }
             }
             hr {}
-            div {class:"flex flex-col justify-around",
-                Map {} 
+            div {class:"flex flex-col justify-around grow-0",
+            Map {} 
             }
         }
     })
@@ -53,6 +58,7 @@ fn Map(cx: Scope) -> Element {
     if *count >= NUM_MAPS {
         *map_vec.write() = maps::get_map_list();
         changeCount(0);
+        #[cfg(debug_assertions)]
         log::info!("Map list refreshed");
     }
 
@@ -71,7 +77,8 @@ fn Map(cx: Scope) -> Element {
                 class: "p-2 mt-3 rounded-lg bg-neutral-800 text-neutral-100 border border-solid border-neutral-300 touch-manipulation",
                 onclick: move |_| {
                     changeCount(count+1);
-                    if cfg!(debug_assertions){
+                        #[cfg(debug_assertions)]
+                    {
                         log::info!("Click #{}", count+1);
                         log::info!("First map: {}", map_vec.read().get(0).unwrap());
                         log::info!("Last map: {}", map_vec.read().get(79).unwrap());
@@ -91,8 +98,8 @@ fn Combo<'a>(cx: Scope<'a>, combo: &'a Statstick) -> Element<'a> {
     let glider_name = combo.get_glider().unwrap_or("error");
    
     cx.render(rsx! {
-        div { class: "flex flex-row justify-center text-neutral-100 pb-3",
-        div { class: "flex flex-col pr-2",     
+        div { class: "flex flex-row justify-between text-neutral-100 pb-3",
+        div { class: "flex flex-col pr-7",     
             img {
                 src: "assets/characters/{char_name}.webp",
             }
@@ -101,21 +108,20 @@ fn Combo<'a>(cx: Scope<'a>, combo: &'a Statstick) -> Element<'a> {
             Stats_Display { combo: combo.clone() } 
         }
 
-        div { 
-        }
         div { class: "flex flex-row justify-center flex-grow-0 gap-4",
             img { src: "assets/karts/{kart_name}.webp" },
             img { src: "assets/tires/{tire_name}.webp" },
             img { src: "assets/gliders/{glider_name}.webp" },
         }
+
         div { class: "flex flex-row justify-center flex-grow-0 gap-4 min-h-[40px]",
-            div { class: "min-w-[100px] max-w-[100px] text-neutral-100 text-center whitespace-normal text-base/5",
+            div { class: "w-[100px] text-neutral-100 text-center whitespace-normal text-base/5",
                 "{kart_name}"
             }
-            div { class: "min-w-[100px] max-w-[100px] text-neutral-100 text-center whitespace-normal text-base/5",
+            div { class: "w-[100px] text-neutral-100 text-center whitespace-normal text-base/5",
                 "{tire_name}"
             }
-            div { class: "min-w-[100px] max-w-[100px] text-neutral-100 text-center whitespace-normal text-base/5",
+            div { class: "w-[100px] text-neutral-100 text-center whitespace-normal text-base/5",
                 "{glider_name}"
             }
         }
