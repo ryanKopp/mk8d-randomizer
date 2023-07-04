@@ -51,10 +51,6 @@ fn Map(cx: Scope) -> Element {
 
     let count = use_read(cx, COUNT);
     let changeCount = use_set(cx, COUNT);
-    
-    let binding = map_vec.read();
-    let curr_map = binding.get(*count%(map_vec.read().len())).unwrap();
-    let map_path = "maps/".to_owned() + curr_map + ".webp";
    
     //Reshuffle maps
     if *count >= NUM_MAPS {
@@ -62,6 +58,11 @@ fn Map(cx: Scope) -> Element {
         changeCount(0);
         log::info!("Map list refreshed");
     }
+
+    let binding = map_vec.read();
+    let curr_map = binding.get(*count%(map_vec.read().len())).unwrap();
+    let map_path = "maps/".to_owned() + curr_map + ".webp";
+
     cx.render(rsx! {
         div { class: "flex flex-row justify-around pt-2", 
             img {
