@@ -30,14 +30,17 @@ Mario,4,3.5,3.5,3.5,3.5
 Ludwig,4,3.5,3.5,3.5,3.5
 Luigi,4,3.5,3.5,3.75,3.25
 Iggy,4,3.5,3.5,3.75,3.25
+Kamek,4,3.5,3.5,3.75,3.25
 Rosalina,4.25,3.25,3.75,3.25,3.75
 King Boo,4.25,3.25,3.75,3.25,3.75
 Link,4.25,3.25,3.75,3.25,3.75
 Metal Mario,4.25,3.25,4.5,3.25,3.25
 Pink Gold Peach,4.25,3.25,4.5,3.25,3.25
+Petey Pirahna,4.25,3.25,4.5,3.25,3.25
 Donkey Kong,4.5,3.25,4,3,3
 Waluigi,4.5,3.25,4,3,3
 Roy,4.5,3.25,4,3,3
+Wiggler,4.5,3.25,4,3,3
 Wario,4.75,3,4.25,2.75,3.25
 Dry Bowser,4.75,3,4.25,2.75,3.25
 Bowser,4.75,3,4.5,2.5,3
@@ -211,4 +214,12 @@ Yoshi's Island
 Bangkok Rush (Tour)
 Mario Circuit (DS)
 Waluigi Stadium (GCN)
-Singapore Speedway (Tour)";
+Singapore Speedway (Tour)
+Athens Dash (Tour)
+Daisy Cruiser (GCN)
+Moonview Highway (Wii)
+Squeaky Clean Sprint
+Los Angeles Laps (Tour)
+Sunset Wilds (GBA)
+Koopa Cape (Wii)
+Vancouver Velocity (Tour)";
