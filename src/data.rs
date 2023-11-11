@@ -19,10 +19,12 @@ Larry,3.25,4,2.75,4.25,4
 Cat Peach,3.5,4,2.75,4,3.75
 Inkling Girl,3.5,4,2.75,4,3.75
 Villager Girl,3.5,4,2.75,4,3.75
+Diddy Kong,3.5,4,2.75,4,3.75
 Peach,3.75,3.75,3,3.75,3.75
 Daisy,3.75,3.75,3,3.75,3.75
 Yoshi,3.75,3.75,3,3.75,3.75
 Birdo,3.75,3.75,3,3.75,3.75
+Peachette,3.75,3.75,3,3.75,3.75
 Tanooki Mario,3.75,3.75,3.25,3.75,3.25
 Inkling Boy,3.75,3.75,3.25,3.75,3.25
 Villager Boy,3.75,3.75,3.25,3.75,3.25
@@ -34,6 +36,7 @@ Kamek,4,3.5,3.5,3.75,3.25
 Rosalina,4.25,3.25,3.75,3.25,3.75
 King Boo,4.25,3.25,3.75,3.25,3.75
 Link,4.25,3.25,3.75,3.25,3.75
+Pauline,4.25,3.25,3.75,3.25,3.75
 Metal Mario,4.25,3.25,4.5,3.25,3.25
 Pink Gold Peach,4.25,3.25,4.5,3.25,3.25
 Petey Pirahna,4.25,3.25,4.5,3.25,3.25
@@ -43,6 +46,7 @@ Roy,4.5,3.25,4,3,3
 Wiggler,4.5,3.25,4,3,3
 Wario,4.75,3,4.25,2.75,3.25
 Dry Bowser,4.75,3,4.25,2.75,3.25
+Funky Kong,4.75,3,4.25,2.75,3.25
 Bowser,4.75,3,4.5,2.5,3
 Morton,4.75,3,4.5,2.5,3";
 
@@ -222,4 +226,12 @@ Squeaky Clean Sprint
 Los Angeles Laps (Tour)
 Sunset Wilds (GBA)
 Koopa Cape (Wii)
-Vancouver Velocity (Tour)";
+Vancouver Velocity (Tour)
+Rome Avanti (Tour)
+DK Mountain (GCN)
+Daisy Circuit (Wii)
+Pirahna Plant Cove
+Madrid Drive (Tour)
+Rosalina's Ice World (3DS)
+Bowser Castle 3 (SNES)
+Rainbow Road (Wii)";
