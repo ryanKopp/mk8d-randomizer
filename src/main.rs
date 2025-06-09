@@ -7,7 +7,7 @@ mod data;
 mod items;
 mod maps;
 
-const NUM_MAPS: usize = 88;
+const NUM_MAPS: usize = 96;
 static COUNT: Atom<usize> = |_| 0;
 static MAPS: AtomRef<Vec<String>> = |_| maps::get_map_list();
 
