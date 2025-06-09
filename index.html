@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MK8D🏎️Randomizer</title>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/mk8d-randomizer/tailwind-bad1a58b492450a3.css" integrity="sha384-mzeKd+X9G8zNblmed5cKtZysgyR/Pi41RjgeYDEvYQXrF9QO7+phsW2HO1vwXoLu"/>
+  
+
+
+<link rel="modulepreload" href="/mk8d-randomizer/mk8d_randomizer-2ea2ef1b302c2bad.js" crossorigin="anonymous" integrity="sha384-e7jigem078zQtFKEsPiuTYbX/v8r3Zj7tvbE905qqRsiycAKJA1v4RwtGO2l2KqH"><link rel="modulepreload" href="/mk8d-randomizer/snippets/dioxus-interpreter-js-7853214f69bd9fe6/inline0.js" crossorigin="anonymous" integrity="sha384-8DKyMaryASO5eWhwHMWHKprLIpTZMS7tDSWGAWrM6EGMnCBZZSeT5UZKiXo0xnOJ"><link rel="modulepreload" href="/mk8d-randomizer/snippets/dioxus-web-dad4d7491730f4fe/inline0.js" crossorigin="anonymous" integrity="sha384-Dxcv63sNi1i1y3YoU65Oahj/MNKUBEPhWTkbqWXzN9PtLxrFSdv0FtNQFiODlF/F"><link rel="preload" href="/mk8d-randomizer/mk8d_randomizer-2ea2ef1b302c2bad_bg.wasm" crossorigin="anonymous" integrity="sha384-pjY4qprL3aFuqTdbduID5tMjoZ7t/YCNXY16MWlv1S3DZgqZrhyuIYY1FuSAEaL+" as="fetch" type="application/wasm"></head>
+<body>
+  <div id="main"></div>
+
+<script type="module">
+import init, * as bindings from '/mk8d-randomizer/mk8d_randomizer-2ea2ef1b302c2bad.js';
+const wasm = await init('/mk8d-randomizer/mk8d_randomizer-2ea2ef1b302c2bad_bg.wasm');
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
