@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - master
+      - github-toolchain
 # to only run when you do a new github release, comment out above part and uncomment the below trigger.
 # on:
 #   release:
@@ -22,7 +23,7 @@ jobs:
       - uses: actions-rs/toolchain@v1 # get rust toolchain for wasm
         with:
           profile: minimal
-          toolchain: stable
+          toolchain: 1.70.0
           target: wasm32-unknown-unknown
           override: true
       - name: Rust Cache # cache the rust build artefacts
@@ -36,10 +37,10 @@ jobs:
         # relatively as eframe_template/favicon.ico. if we skip public-url option, the href paths will instead request username.github.io/favicon.ico which
         # will obviously return error 404 not found.
         run: ./trunk build --release --public-url "${GITHUB_REPOSITORY#*/}"
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist
-          # this option will not maintain any history of your previous pages deployment
-          # set to false if you want all page build to be committed to your gh-pages branch history
-          single-commit: true
+      #- name: Deploy
+      #  uses: JamesIves/github-pages-deploy-action@v4
+      #  with:
+      #    folder: dist
+      #    # this option will not maintain any history of your previous pages deployment
+      #    # set to false if you want all page build to be committed to your gh-pages branch history
+      #    single-commit: true
