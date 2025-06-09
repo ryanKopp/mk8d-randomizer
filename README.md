@@ -7,6 +7,11 @@ You can use the app in the browser [here](https://ryankopp.github.io/mk8d-random
 
 Built using [dioxus](https://github.com/DioxusLabs/dioxus).
 
+Build locally to test with `dioxus serve`.
+
+You will need to run `rustup target add wasm32-unknown-unknown`.
+To install dioxus-cli: `cargo install dioxus-cli --version 0.3.2 --locked`
+
 ## Features I may add in the future:
 
 - Blacklists for map randomization
