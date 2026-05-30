@@ -92,18 +92,18 @@ fn Combo<'a>(cx: Scope<'a>, combo: &'a Statstick) -> Element<'a> {
         div { class: "flex flex-row justify-between text-neutral-100 pb-3",
             div { class: "flex flex-col pr-7",
                 img { src: "assets/characters/{char_name}.webp" }
-                div { class: "text-center text-neutral-100 text-lg", "{char_name}" }
+                div { class: "text-center text-neutral-100 text-lg min-w-[140px]", "{char_name}" }
             }
             Stats_Display { combo: combo.clone() }
         }
 
-        div { class: "flex flex-row justify-center flex-grow-0 gap-4",
+        div { class: "flex flex-row justify-between flex-grow-0 gap-4",
             img { src: "assets/karts/{kart_name}.webp" }
             img { src: "assets/tires/{tire_name}.webp" }
             img { src: "assets/gliders/{glider_name}.webp" }
         }
 
-        div { class: "flex flex-row justify-center flex-grow-0 gap-4 min-h-[40px]",
+        div { class: "flex flex-row justify-between flex-grow-0 gap-4 min-h-[40px]",
             div { class: "w-[100px] text-neutral-100 text-center whitespace-normal text-base/5",
                 "{kart_name}"
             }
